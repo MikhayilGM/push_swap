@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror #-I$(INC) #g3 -fsanitize=address
 
 INC = push_swap.h
 
-SRC = push_swap.c ft_substr.c ft_strlen.c ft_strjoin.c ft_split.c ft_memcpy.c ft_atoi.c validation.c
+SRC = push_swap.c ft_substr.c ft_strlen.c ft_strjoin.c ft_split.c ft_memcpy.c ft_atoi.c validation.c stack.c swap.c push.c
 OBJ = $(SRC:.c=.o)
 
 BONUS_SRC = 
@@ -32,6 +32,6 @@ clean :
 
 fclean : clean
 		rm -f $(NAME)
-		rm -f $(BONUS)
+#		rm -f $(BONUS)
 
 re : fclean all

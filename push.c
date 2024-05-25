@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 18:45:00 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/25 18:23:59 by mikhmart         ###   ########.fr       */
+/*   Created: 2024/05/25 20:30:10 by mikhmart          #+#    #+#             */
+/*   Updated: 2024/05/25 20:45:48 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	valid(char *str)
+void	pa(struct stack	*a, struct stack *b)
 {
-	if(*str != '-' && *str != '+' && !(*str >= '0' && *str <= '9'))
-		return (0);
-	++str;
-	while(*str)
-	{
-		if(!(*str >= '0' && *str <= '9'))
-			return (0);
-		++str;
-	}
-	return (1);
+	struct stack	*tmp;
+	 
+	if(b)
+		return;
+	tmp = b->next;
+	b->next = a;
+	a = b;
+	b = tmp;
+	write(1, "pa\n", 3);
 }
 
-int	isNempty(const char* str)
+void	pb(struct stack	*a, struct stack *b)
 {
-	while(*str)
-	{
-		if(*str != ' ' && !(*str >= 9 && *str <= 13))
-			return (1);
-		++str; 
-	}
-	return (0);
+	struct stack	*tmp;
+	 
+	if(a)
+		return;
+	tmp = a->next;
+	a->next = b;
+	b = a;
+	b = tmp;
+	write(1, "pb\n", 3);
 }
