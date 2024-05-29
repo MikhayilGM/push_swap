@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: misha <misha@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:35:43 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/25 20:45:56 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/05/30 01:05:33 by misha            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,13 @@ int			check_repetition(struct stack **a, int value);
 void		sa(struct stack *a, int flag);
 void		sb(struct stack *b, int flag);
 void		ss(struct stack *a, struct stack *b);
-void		pa(struct stack	*a, struct stack *b);
-void		pb(struct stack	*a, struct stack *b);
+void		pa(struct stack	**a, struct stack **b);
+void		pb(struct stack	**a, struct stack **b);
+void		ra(struct stack **a, int flag);
+void		rb(struct stack **a, int flag);
+void		rr(struct stack **a, struct stack **b);
+void		rra(struct stack **a, int flag);
+void		rrb(struct stack **b, int flag);
+void		rrr(struct stack **a, struct stack **b);
 
 #endif

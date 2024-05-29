@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: misha <misha@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:31:36 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/25 20:45:04 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/05/30 01:06:02 by misha            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ void print_list(struct stack *ls)
 {
 	while(ls)
 	{
-		printf("%d\n", ls->value);
+		printf("%d ", ls->value);
 		ls = ls->next;
 	}
+	printf("\n");
 }
 
 int main(int argc, char **argv)
@@ -60,4 +61,21 @@ int main(int argc, char **argv)
 	print_list(a);
 	printf("b\n");
 	print_list(b);
+	pa(&a, &b);
+	printf("a\n");
+	print_list(a);
+	printf("b\n");
+	print_list(b);
+	pa(&a, &b);
+	printf("a\n");
+	print_list(a);
+	printf("b\n");
+	print_list(b);
+	rr(&a, &b);
+	rr(&a, &b);
+	print_list(a);
+	rb(&b, 1);
+	rra(&a, 1);
+	rra(&a, 1);
+	print_list(a);
 } 
