@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misha <misha@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:19:19 by misha             #+#    #+#             */
-/*   Updated: 2024/05/30 00:49:32 by misha            ###   ########.fr       */
+/*   Updated: 2024/05/30 18:44:17 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ra(struct stack **a, int flag)
+void    ra(t_stack **a, int flag)
 {
-    struct stack *tmp;
+    t_stack	*tmp;
     
     if(!(*a) || !((*a)->next))
 		return ;
@@ -30,9 +30,9 @@ void    ra(struct stack **a, int flag)
         write(1, "ra\n", 3);
 }
 
-void    rb(struct stack **b, int flag)
+void    rb(t_stack **b, int flag)
 {
-	struct stack *tmp;
+	t_stack *tmp;
 	
 	if(!(*b) || !((*b)->next))
 		return ;
@@ -48,7 +48,7 @@ void    rb(struct stack **b, int flag)
 		write(1, "rb\n", 3);
 }
 
-void    rr(struct stack **a, struct stack **b)
+void    rr(t_stack **a, t_stack **b)
 {
 	ra(a, 0);
 	rb(b, 0);

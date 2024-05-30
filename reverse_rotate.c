@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misha <misha@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:54:22 by misha             #+#    #+#             */
-/*   Updated: 2024/05/30 01:07:34 by misha            ###   ########.fr       */
+/*   Updated: 2024/05/30 18:43:40 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(struct stack **a, int flag)
+void	rra(t_stack **a, int flag)
 {
-	struct stack	*tmp;
+	t_stack	*tmp;
 	
 	if(!(*a) || !(*a)->next)
 		return ;
@@ -29,9 +29,9 @@ void	rra(struct stack **a, int flag)
 		write(1, "rra\n", 4);
 }
 
-void	rrb(struct stack **b, int flag)
+void	rrb(t_stack **b, int flag)
 {
-	struct stack	*tmp;
+	t_stack	*tmp;
 
 	if(!(*b) || !(*b)->next)
 		return ;
@@ -46,7 +46,7 @@ void	rrb(struct stack **b, int flag)
 		write(1, "rrb\n", 4);
 }
 
-void	rrr(struct stack **a, struct stack **b)
+void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a, 0);
 	rrb(b, 0);

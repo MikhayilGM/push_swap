@@ -3,21 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misha <misha@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:31:36 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/30 01:06:02 by misha            ###   ########.fr       */
+/*   Updated: 2024/05/30 20:54:22 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> 
 
-void print_list(struct stack *ls)
+void print_list(t_stack *ls)
 {
 	while(ls)
 	{
 		printf("%d ", ls->value);
+		ls = ls->next;
+	}
+	printf("\n");
+}
+
+void print_list_ind(t_stack *ls)
+{
+	while(ls)
+	{
+		printf("%d ", ls->index);
 		ls = ls->next;
 	}
 	printf("\n");
@@ -38,7 +48,7 @@ int main(int argc, char **argv)
 	}
 	strs = ft_split(str);
 	i = 0;
-	struct stack *a = NULL;
+	t_stack *a = NULL;
 	while(strs[i] != NULL)
 	{
 		printf("%d |%s| %d\n", i, strs[i], valid(strs[i]));
@@ -48,34 +58,17 @@ int main(int argc, char **argv)
 		}
 		++i;
 	}
-	struct stack *b = NULL;
-	printf("Stack\n");
+	t_stack *b;
+	b = copy_list(a);
+	printf("a list\n");
 	print_list(a);
-	pb(&a, &b);
-	printf("a\n");
-	print_list(a);
-	printf("b\n");
+	printf("sorted list\n");
+	bubble_sort(b);
 	print_list(b);
-	pb(&a, &b);
-	printf("a\n");
+	init_indexes(b);
+	print_list_ind(b);
+	set_indexes(a);
+	printf("a after seting indexes\n");
 	print_list(a);
-	printf("b\n");
-	print_list(b);
-	pa(&a, &b);
-	printf("a\n");
-	print_list(a);
-	printf("b\n");
-	print_list(b);
-	pa(&a, &b);
-	printf("a\n");
-	print_list(a);
-	printf("b\n");
-	print_list(b);
-	rr(&a, &b);
-	rr(&a, &b);
-	print_list(a);
-	rb(&b, 1);
-	rra(&a, 1);
-	rra(&a, 1);
-	print_list(a);
+	print_list_ind(a);
 } 

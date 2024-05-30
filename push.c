@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misha <misha@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 20:30:10 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/30 00:31:29 by misha            ###   ########.fr       */
+/*   Updated: 2024/05/30 18:43:25 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(struct stack	**a, struct stack **b)
+void	pa(t_stack	**a, t_stack **b)
 {
-	struct stack	*tmp;
+	t_stack	*tmp;
 	 
 	if(!(*b))
 		return;
@@ -25,9 +25,9 @@ void	pa(struct stack	**a, struct stack **b)
 	write(1, "pa\n", 3);
 }
 
-void	pb(struct stack	**a, struct stack **b)
+void	pb(t_stack	**a, t_stack **b)
 {
-	struct stack	*tmp;
+	t_stack	*tmp;
 	
 	if(!(*a))
 		return;

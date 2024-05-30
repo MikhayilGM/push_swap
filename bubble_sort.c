@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/25 20:13:10 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/30 18:44:46 by mikhmart         ###   ########.fr       */
+/*   Created: 2024/05/30 20:24:06 by mikhmart          #+#    #+#             */
+/*   Updated: 2024/05/30 20:32:40 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *a, int flag)
+void	swap(int *a, int* b)
 {
 	int	tmp;
-	
-	if(a == NULL || a->next == NULL)
-		return ;
-	tmp = a->value;
-	a->value = a->next->value;
-	a->next->value = tmp;
-	if(flag)
-		write(1, "sa\n", 3);
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;	
 }
 
-void	sb(t_stack *b, int flag)
+void	bubble_sort(t_stack	*stack)
 {
-	int	tmp;
-	
-	if(b == NULL || b->next == NULL)
-		return ;
-	tmp = b->value;
-	b->value = b->next->value;
-	b->next->value = tmp;
-	if(flag)
-		write(1, "sb\n", 3);
-}
+	int	is_sorted;
+	t_stack	*iter;
 
-void	ss(t_stack *a, t_stack *b)
-{
-	sa(a, 0);
-	sb(b, 0);
-	write(1, "ss\n", 3);
+	if	(!stack)
+		return ;
+	is_sorted = 0;
+	while (!is_sorted)
+	{
+		iter = stack;
+		is_sorted = 1;
+		while (iter->next)
+		{
+			if (iter->value > iter->next->value)
+			{
+				swap(&(iter->value), &(iter->next->value));
+				is_sorted = 0;
+			}
+			iter = iter->next;
+		}
+	}
 }
