@@ -6,7 +6,7 @@
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:52:58 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/23 18:34:11 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:56:43 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ long long	ft_atoi(const char *str)
 		number *= 10;
 		number += str[x] - '0';
 		++x;
+		if(number > INT_MAX)
+			error();
 	}
 	return (nb * number);
 }

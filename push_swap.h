@@ -6,7 +6,7 @@
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:35:43 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/30 20:53:33 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:58:14 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void		rr(t_stack	**a, t_stack **b);
 void		rra(t_stack	**a, int flag);
 void		rrb(t_stack	**b, int flag);
 void		rrr(t_stack	**a, t_stack **b);
-char		*ft_strjoin(const char *str1, const char *str2);
+char		*ft_strjoin(char *str1, char *str2);
 int			onlyNumbers(int argc, char **argv);
 long long	ft_atoi(const char *str);
 char		**ft_split(char const *s);
@@ -55,5 +55,14 @@ void		bubble_sort(t_stack	*stack);
 void		init_indexes(t_stack *stack);
 t_stack		*find(t_stack *stack, int value);
 void		set_indexes(t_stack *stack);
+int			stack_size(t_stack* a);
+int			my_sqrt(int size);
+int			sqrt_3(int size);
+int 		find_max_index(t_stack* a);
+void		butterfly(t_stack** a);
+t_stack*	push_to_b(t_stack** a);
+void print_list_ind(t_stack *ls);
+void print_list(t_stack *ls);
+void		error();
 
 #endif

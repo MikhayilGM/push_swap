@@ -6,7 +6,7 @@
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:55:15 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/23 19:41:07 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:33:03 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ char	**ft_split(char const *s)
 
 int	free_split(char **str, int j)
 {
-	while (j-- > 0)
+	while (--j >= 0)
 		free(str[j]);
-	free(str);
 	return (1);
 }

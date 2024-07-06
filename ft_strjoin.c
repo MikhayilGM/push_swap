@@ -6,13 +6,13 @@
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:56:10 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/23 19:02:20 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:43:57 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_strjoin(const char *str1, const char *str2)
+char	*ft_strjoin(char *str1, char *str2)
 {
 	size_t	len1;
 	size_t	len2;
@@ -28,5 +28,6 @@ char	*ft_strjoin(const char *str1, const char *str2)
 	ft_memcpy(result, str1, len1);
 	result[len1] = ' ';
 	ft_memcpy(result + len1 + 1, str2, len2 + 1);
+	free(str1);
 	return (result);
 }

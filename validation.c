@@ -6,7 +6,7 @@
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 18:45:00 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/25 18:23:59 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/07/06 20:04:58 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	valid(char *str)
 {
-	if(*str != '-' && *str != '+' && !(*str >= '0' && *str <= '9'))
+	if(((*str != '-' && *str != '+') || *(str + 1) == '\0') && !(*str >= '0' && *str <= '9'))
 		return (0);
 	++str;
 	while(*str)
@@ -35,4 +35,10 @@ int	isNempty(const char* str)
 		++str; 
 	}
 	return (0);
+}
+
+void	error()
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }

@@ -6,7 +6,7 @@
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 20:30:10 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/30 18:43:25 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/07/06 18:52:31 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	pa(t_stack	**a, t_stack **b)
 {
 	t_stack	*tmp;
 	 
-	if(!(*b))
+	if(!b || !(*b))
 		return;
 	tmp = (*b)->next;
 	(*b)->next = *a;
@@ -29,7 +29,7 @@ void	pb(t_stack	**a, t_stack **b)
 {
 	t_stack	*tmp;
 	
-	if(!(*a))
+	if(!a || !(*a))
 		return;
 	tmp = (*a)->next;
 	(*a)->next = (*b);

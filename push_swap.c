@@ -6,7 +6,7 @@
 /*   By: mikhmart <mikhmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:31:36 by mikhmart          #+#    #+#             */
-/*   Updated: 2024/05/30 20:54:22 by mikhmart         ###   ########.fr       */
+/*   Updated: 2024/07/06 20:05:45 by mikhmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	char	*str;
 	char	**strs;
 	
-	str = "";
+	str = malloc(sizeof(char));
 	i = 1;
 	while(i < argc)
 	{
@@ -51,24 +51,11 @@ int main(int argc, char **argv)
 	t_stack *a = NULL;
 	while(strs[i] != NULL)
 	{
-		printf("%d |%s| %d\n", i, strs[i], valid(strs[i]));
 		if(valid(strs[i]) && !check_repetition(&a, ft_atoi(strs[i])))
-		{
 			push(&a, ft_atoi(strs[i]));
-		}
+		else
+			error();
 		++i;
 	}
-	t_stack *b;
-	b = copy_list(a);
-	printf("a list\n");
-	print_list(a);
-	printf("sorted list\n");
-	bubble_sort(b);
-	print_list(b);
-	init_indexes(b);
-	print_list_ind(b);
-	set_indexes(a);
-	printf("a after seting indexes\n");
-	print_list(a);
-	print_list_ind(a);
+	butterfly(a);
 } 
